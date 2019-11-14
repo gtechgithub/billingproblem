@@ -38,7 +38,7 @@ public class CsvReaderTransConverter {
 
 		List<BillingTransactionDetails> billingTransList = new ArrayList();
 
-		try (Stream<String> stream = Files.lines(Paths.get("C:\\Softwares\\projects\\transactiondetails.csv"))) {
+		try (Stream<String> stream = Files.lines(Paths.get(properties.getFileName()))) {
 			stream.forEach(line -> populateTransctionDetails(billingTransList, line));
 		} catch (IOException e) {
 			e.printStackTrace();
